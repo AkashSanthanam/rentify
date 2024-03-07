@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/Navbar.js";
 import {
   Autocomplete,
@@ -8,8 +9,15 @@ import {
   CardBody,
   Image,
   Divider,
+  Accordion,
+  AccordionItem,
 } from "@nextui-org/react";
 import { CiSearch } from "react-icons/ci";
+import { IoLogoPinterest } from "react-icons/io";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -75,42 +83,310 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-[1024px] flex flex-col items-center">
+      <div className="w-full h-[700px] flex flex-col items-center">
         <h1 className="text-6xl  font-bold ">Buy, Sell, or Rent</h1>
         <div className="w-full flex flex-row justify-center mt-10 gap-8">
-          <Card className="p-8">
-            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start ">
+          <Card className="p-4 w-[28%] cursor-pointer hover:bg-primary-500">
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center ">
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
                 src="/buyinghome.png"
                 width={270}
               />
+              <h1 className="text-4xl font-semibold">Buy a Home</h1>
             </CardHeader>
-            <CardBody className="overflow-visible py-2"></CardBody>
+            <CardBody className="overflow-visible py-2 text-large">
+              Find your place with an immersive photo experience and the most
+              listings, including things you won’t find anywhere else.
+            </CardBody>
           </Card>
-          <Card className="p-8" isHoverable={true}>
-            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start ">
+          <Card className="p-4 w-[28%] cursor-pointer hover:bg-primary-500">
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src="/sellinghome.jpg"
+                src="/sellinghome.png"
                 width={270}
               />
+              <h1 className="text-4xl font-semibold">Sell a Home</h1>
             </CardHeader>
-            <CardBody className="overflow-visible py-2"></CardBody>
+            <CardBody className="overflow-visible py-2 text-large">
+              No matter what path you take to sell your home, we can help you
+              navigate a successful sale.
+            </CardBody>
           </Card>
-          <Card className="p-8">
-            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start ">
+          <Card className="p-4 w-[28%] cursor-pointer hover:bg-primary-500 ">
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center ">
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src="/buyinghome.jpg"
+                src="/renthome.png"
                 width={270}
               />
+              <h1 className="text-4xl font-semibold">Rent a Home</h1>
             </CardHeader>
-            <CardBody className="overflow-visible py-2"></CardBody>
+            <CardBody className="overflow-visible py-2">
+              We’re creating a seamless online experience – from shopping on the
+              largest rental network, to applying, to paying rent.
+            </CardBody>
           </Card>
+        </div>
+      </div>
+
+      <div className="w-full h-[400px] flex flex-col mr-auto">
+        <h1 className="text-2xl font-bold ml-20 ">Browse Homes</h1>
+        <div className="flex flex-row w-full gap-8">
+          <Card className="w-[20%] h-[200px] ml-20 mt-10 cursor-pointer group">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start group-hover:underline transition-all">
+              <h4 className="text-large text-secondary font-bold  ">
+                New Listings
+              </h4>
+            </CardHeader>
+            <Image
+              isBlurred
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="/newlisting.jpeg"
+            />
+          </Card>
+          <Card className="w-[20%] h-[200px] mt-10 cursor-pointer group">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start group-hover:underline transition-all">
+              <h4 className="text-large text-secondary font-bold">
+                New Construction
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="/newconstruction.jpeg"
+            />
+          </Card>
+          <Card className="w-[20%] h-[200px] mt-10 cursor-pointer group">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start group-hover:underline transition-all">
+              <h4 className="text-large text-secondary font-bold">Land</h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="/land.jpg"
+            />
+          </Card>
+          <Card className="w-[20%] h-[200px] mt-10 cursor-pointer group">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start group-hover:underline transition-all">
+              <h4 className="text-large text-secondary font-bold">
+                Recently Sold
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="/recentlysold.jpg"
+            />
+          </Card>
+        </div>
+      </div>
+      <div className="w-full h-[1000px] flex flex-col bg-secondary-500 justify-center">
+        <div className="flex flex-row">
+          <Image
+            src="/workingtogether.jpeg"
+            alt=""
+            radius="none"
+            width={700}
+            className="h-full object-cover"
+          ></Image>
+          <div className="flex flex-col justify-center ml-10 w-[50%]">
+            <h1 className="text-4xl font-bold">
+              Need a home loan? Get pre-approved
+            </h1>
+            <br />
+            <p className="text-lg font-semibold">
+              Find a lender who can offer competitive mortgage rates and help{" "}
+              <br /> you with pre-approval.
+            </p>
+            <Button
+              className="w-52 mt-5"
+              color="primary"
+              variant="solid"
+              size="lg"
+              radius="md"
+            >
+              Get pre-approved now
+            </Button>
+          </div>
+        </div>
+        <div className="flex flex-row">
+          <div className="flex flex-col justify-center ml-10 mt-10">
+            <h1 className="text-4xl font-bold">Get Local Info</h1>
+            <br />
+            <p className="text-lg font-semibold">
+              Does it have pet-friendly rentals? How are the schools? <br /> Get
+              important local information on the area you're most interested in.
+            </p>
+          </div>
+          <Image
+            src="/localarea.jpeg"
+            alt=""
+            radius="none"
+            width={800}
+            className="h-full object-cover ml-16"
+          ></Image>
+        </div>
+      </div>
+      <div className="w-full h-[800px] flex flex-col justify-center items-center">
+        <h1 className="text-2xl font-bold bg-gradient-to-tr from-primary-100 to-primary-500 ">
+          FAQ
+        </h1>
+        <br />
+        <h1 className="text-4xl font-bold">Frequently Asked Questions</h1>
+        <br />
+        <br />
+        <p className="text-lg font-light mb-10">
+          Frequently Asked Questions About the Rental Process on Our Website:
+          Answers to Common Concerns and Inquiries.
+        </p>
+        <div className="w-[60%]">
+          <Accordion
+            className="shadow-lg"
+            variant="bordered"
+            showDivider={true}
+          >
+            <AccordionItem
+              key="1"
+              aria-label="Accordion 1"
+              title="Are there any fees associated with using Rentify?"
+              // className="transition-colors duration-300 hover:bg-primary-400"
+            >
+              Rentify is free for tenants to use. However, there may be fees
+              associated with specific services, such as rental applications or
+              background checks, depending on the landlord or property manager.
+            </AccordionItem>
+            <AccordionItem
+              key="2"
+              aria-label="Accordion 2"
+              title="Can I apply for multiple properties at once?"
+            >
+              Yes, you can apply for multiple properties on Rentify. However,
+              please note that each application is typically specific to a
+              single property. You'll need to submit separate applications for
+              each property you're interested in.
+            </AccordionItem>
+            <AccordionItem
+              key="3"
+              aria-label="Accordion 3"
+              title="How long does it take for a rental application to be processed?"
+            >
+              The processing time for rental applications varies depending on
+              the landlord or property manager. Typically, it can take anywhere
+              from a few days to a week to receive a decision. We recommend
+              contacting the property manager directly for updates on your
+              application status.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+      <div className="flex flex-row w-full h-[900px] justify-center">
+        <div className="flex flex-col w-[40%] justify-center">
+          <h1 className="text-4xl font-extrabold">
+            Download our app to get <br /> most out of it
+          </h1>
+          <br />
+          <p className="text-lg font-light">
+            Experience the convenience of finding your perfect rental property
+            at your fingertips with the Rentify mobile app! Our user-friendly
+            interface makes it easier than ever to search for listings, schedule
+            viewings, and apply for your dream home, all from the palm of your
+            hand. With real-time notifications and updates, you'll never miss
+            out on new listings or important communications from landlords.
+            Download the Rentify app today and discover the future of
+            hassle-free renting
+          </p>
+          <div className="flex flex-row mt-10 gap-4">
+            <Image
+              className="cursor-pointer"
+              width={200}
+              height={200}
+              src="/playstore.png"
+            ></Image>
+            <Image
+              className="cursor-pointer"
+              width={200}
+              height={200}
+              src="/appstore.png"
+            ></Image>
+          </div>
+        </div>
+        <div
+          className="flex w-[50%] h-[800px] bg-center bg-cover justify-center items-center content-center"
+          style={{
+            backgroundImage: "url(/download.png)",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Image width={150} height={150} src="/logo.png"></Image>
+        </div>
+      </div>
+      <div className="flex flex-row w-full h-[400px] bg-foreground text-primary-400 gap-20">
+        <div className="flex flex-col m-10 gap-4">
+          <FaFacebook color="#C2EEFA" size={25} />
+          <FaLinkedin color="#C2EEFA" size={25} />
+          <FaXTwitter color="#C2EEFA" size={25}></FaXTwitter>
+          <FaInstagram color="#C2EEFA" size={25}></FaInstagram>
+          <IoLogoPinterest color="#C2EEFA" size={25}></IoLogoPinterest>
+        </div>
+        <div className="flex flex-col mt-10">
+          <h1 className="text-4xl">rentify</h1>
+          <p className="text-lg font-light">Find Your Place, Find Yourself</p>
+          <br />
+          <p className="text-md font-light cursor-pointer hover:text-secondary-100">
+            (123)-456-789
+          </p>
+          <p className="text-md font-light cursor-pointer hover:text-secondary-100">
+            rentify@gmail.com
+          </p>
+        </div>
+        <div className="flex flex-col mt-10">
+          <h1 className="text-4xl font-extrabold">COMPANY</h1>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            About us
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Careers
+          </p>
+          <p className="text-md cursor-pointer  font-extralight hover:text-secondary-100">
+            Accessibility
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Feedback
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Agent Support
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Privacy
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Terms
+          </p>
+        </div>
+        <div className="flex flex-col mt-10">
+          <h1 className="text-4xl font-extrabold">PRODUCTS</h1>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Leads & Branding
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            International Properties
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Avail
+          </p>
+          <p className="text-md cursor-pointer font-extralight hover:text-secondary-100">
+            Builder Solutions
+          </p>
         </div>
       </div>
     </main>

@@ -96,7 +96,7 @@ const Navbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button as={Link} color="secondary" variant="bordered" href="#">
+          <Button as={Link} variant="bordered" color="primary" href="#">
             <h1 className="font-semibold">Register</h1>
           </Button>
         </NavbarItem>
