@@ -47,7 +47,7 @@ const Navbar = () => {
         <NavbarItem>
           <Link
             underline="hover"
-            className="font-semibold"
+            className="font-semibold hidden md:flex"
             color="foreground"
             href="#"
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="font-semibold"
+            className="font-semibold hidden md:flex"
             color="foreground"
             href="#"
             underline="hover"
@@ -67,7 +67,7 @@ const Navbar = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="font-semibold"
+            className="font-semibold hidden md:flex"
             color="foreground"
             href="#"
             underline="hover"
@@ -78,7 +78,7 @@ const Navbar = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="font-semibold"
+            className="font-semibold hidden md:flex"
             color="foreground"
             href="#"
             underline="hover"
@@ -104,27 +104,54 @@ const Navbar = () => {
       <NavbarMenu>
         {" "}
         <NavbarMenuItem>
+          <Link
+            className="font-semibold"
+            color="foreground"
+            href="#"
+            aria-current="page"
+          >
+            Home
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            className="font-semibold"
+            color="foreground"
+            href="#"
+            aria-current="page"
+          >
+            Properties
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            className="font-semibold "
+            color="foreground"
+            href="#"
+            aria-current="page"
+          >
+            Agents
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            className="font-semibold"
+            color="foreground"
+            href="#"
+            aria-current="page"
+          >
+            Blog
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
           <Link color="foreground" href="#">
-            NEW RELEASES
-          </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="#" aria-current="page">
-            SNEAKERS
+            Login
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
           <Link color="foreground" href="#">
-            CONTACT
+            Register
           </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="#">LOGIN</Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button as={Link} color="secondary" variant="light" href="#">
-            <h1 className="font-extrabold">CREATE AN ACCOUNT</h1>
-          </Button>
         </NavbarMenuItem>
       </NavbarMenu>
     </NextNavbar>
