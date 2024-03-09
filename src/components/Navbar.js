@@ -15,7 +15,6 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import { IoMenu } from "react-icons/io5";
-import { BiSearch } from "react-icons/bi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,7 +48,7 @@ const Navbar = () => {
             underline="hover"
             className="font-semibold hidden md:flex"
             color="foreground"
-            href="#"
+            href="/"
           >
             Home
           </Link>
@@ -58,7 +57,7 @@ const Navbar = () => {
           <Link
             className="font-semibold hidden md:flex"
             color="foreground"
-            href="#"
+            href="/properties"
             underline="hover"
             aria-current="page"
           >
