@@ -35,7 +35,7 @@ export default function Home() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="flex w-[48%] h-[90%] pt-10 flex-col ml-auto">
+          <div className="flex w-[43%] h-[90%] pt-10 flex-col ml-auto">
             <p className=" hidden md:flex md:text-6xl font-extrabold">
               Let's find your <br /> Dream Home!{" "}
             </p>
